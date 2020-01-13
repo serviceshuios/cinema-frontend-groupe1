@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProjectionService } from '../projection.service';
 import { Projection } from '../models/projection';
+import { Seance } from '../models/seance';
 
 @Component({
   selector: 'app-projection',
@@ -12,7 +13,9 @@ export class ProjectionComponent implements OnInit {
   projection: Projection = {
     id: 0,
     date: new Date(),
-    prix: 0
+    prix: 0,
+    tickets: [],
+    seance: new Seance()
   };
 
   projections;
@@ -31,6 +34,8 @@ export class ProjectionComponent implements OnInit {
         this.projection.id = 0;
         this.projection.date = new Date();
         this.projection.prix = 0;
+        this.projection.tickets = [];
+        this.projection.seance = new Seance();
       });
   }
 

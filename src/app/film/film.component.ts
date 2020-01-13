@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FilmService } from '../film.service';
 import { Film } from '../models/film';
+import { Categorie } from '../models/categorie';
 
 @Component({
   selector: 'app-film',
@@ -16,7 +17,8 @@ export class FilmComponent implements OnInit {
     realisateur: '',
     description: '',
     photo: '',
-    date: new Date()
+    date: new Date(),
+    categorie: new Categorie()
   };
 
   films;
@@ -39,6 +41,7 @@ export class FilmComponent implements OnInit {
         this.film.description = '';
         this.film.photo = '';
         this.film.date = new Date();
+        this.film.categorie = new Categorie();
       });
   }
 

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { PlaceService } from '../place.service';
 import { Place } from '../models/place';
+import { Ticket } from '../models/ticket';
+import { Salle } from '../models/salle';
 
 @Component({
   selector: 'app-place',
@@ -15,6 +17,8 @@ export class PlaceComponent implements OnInit {
     latitude: 0,
     longitude: 0,
     altitude: 0,
+    ticket: new Ticket(),
+    salle: new Salle()
   };
 
   places;
@@ -35,6 +39,8 @@ export class PlaceComponent implements OnInit {
         this.place.latitude = 0;
         this.place.longitude = 0;
         this.place.altitude = 0;
+        this.place.ticket = new Ticket();
+        this.place.salle = new Salle();
       });
   }
 

@@ -15,6 +15,7 @@ export class VilleComponent implements OnInit {
     latitude: 0,
     longitude: 0,
     altitude: 0,
+    cinemas: []
   };
 
   villes;
@@ -35,6 +36,7 @@ export class VilleComponent implements OnInit {
         this.ville.latitude = 0;
         this.ville.longitude = 0;
         this.ville.altitude = 0;
+        this.ville.cinemas = [];
       });
   }
 

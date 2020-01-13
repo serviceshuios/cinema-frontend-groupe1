@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SalleService } from '../salle.service';
 import { Salle } from '../models/salle';
+import { Cinema } from '../models/cinema';
 
 @Component({
   selector: 'app-salle',
@@ -12,7 +13,9 @@ export class SalleComponent implements OnInit {
   salle: Salle = {
     id: 0,
     name: '',
-    nombrePlaces: 0
+    nombrePlaces: 0,
+    cinema: new Cinema(),
+    places: []
   };
 
   salles;
@@ -31,6 +34,8 @@ export class SalleComponent implements OnInit {
         this.salle.id = 0;
         this.salle.name = '';
         this.salle.nombrePlaces = 0;
+        this.salle.cinema = new Cinema();
+        this.salle.places = [];
       });
   }
 

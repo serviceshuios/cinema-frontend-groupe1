@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CinemaService } from '../cinema.service';
 import { Cinema } from '../models/cinema';
+import { Ville } from '../models/ville';
 
 @Component({
   selector: 'app-cinema',
@@ -15,7 +16,9 @@ export class CinemaComponent implements OnInit {
     latitude: 0,
     longitude: 0,
     altitude: 0,
-    nombreSalles: 0
+    nombreSalles: 0,
+    ville: new Ville(),
+    salles: []
   };
 
   cinemas;
@@ -37,6 +40,8 @@ export class CinemaComponent implements OnInit {
         this.cinema.longitude = 0;
         this.cinema.altitude = 0;
         this.cinema.nombreSalles = 0;
+        this.cinema.ville = new Ville();
+        this.cinema.salles = [];
       });
   }
 

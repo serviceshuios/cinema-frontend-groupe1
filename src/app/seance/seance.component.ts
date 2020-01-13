@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SeanceService } from '../seance.service';
 import { Seance } from '../models/seance';
+import { Projection } from '../models/projection';
 
 @Component({
   selector: 'app-seance',
@@ -12,6 +13,7 @@ export class SeanceComponent implements OnInit {
   seance: Seance = {
     id: 0,
     heureDebut: new Date(),
+    projection: new Projection()
   };
 
   seances;
@@ -29,6 +31,7 @@ export class SeanceComponent implements OnInit {
         this.getAll();
         this.seance.id = 0;
         this.seance.heureDebut = new Date();
+        this.seance.projection = new Projection();
       });
   }
 

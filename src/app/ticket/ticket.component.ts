@@ -15,6 +15,7 @@ export class TicketComponent implements OnInit {
     prix: 0,
     codePayement: 0,
     reservee: false,
+    places: []
   };
 
   tickets;
@@ -35,6 +36,7 @@ export class TicketComponent implements OnInit {
         this.ticket.prix = 0;
         this.ticket.codePayement = 0;
         this.ticket.reservee = false;
+        this.ticket.places = [];
       });
   }
 

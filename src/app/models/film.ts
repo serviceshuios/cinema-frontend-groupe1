@@ -1,3 +1,5 @@
+import { Categorie } from './categorie';
+
 export class Film {
 	public id: number;
 	public titre: string;
@@ -6,4 +8,5 @@ export class Film {
 	public description: string;
 	public photo: string;
 	public date: Date;
+	public categorie: Categorie;
 }

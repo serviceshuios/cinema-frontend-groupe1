@@ -11,7 +11,8 @@ export class CategorieComponent implements OnInit {
 
   categorie: Categorie = {
     id: 0,
-    name: ''
+    name: '',
+    films: []
   };
 
   categories;
@@ -29,6 +30,7 @@ export class CategorieComponent implements OnInit {
         this.getAll();
         this.categorie.id = 0;
         this.categorie.name = '';
+        this.categorie.films = [];
       });
   }
 

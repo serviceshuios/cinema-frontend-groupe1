@@ -1,7 +1,10 @@
+import { Cinema } from './cinema';
+
 export class Ville {
 	public id: number;
 	public name: string;
 	public latitude: number;
 	public longitude: number;
 	public altitude: number;
+	public cinemas: Cinema[];
 }
