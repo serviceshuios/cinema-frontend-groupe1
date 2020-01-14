@@ -9,5 +9,4 @@ export class Cinema {
 	public altitude: number;
 	public nombreSalles: number;
 	public ville: Ville;
-	public salles: Salle[];
 }

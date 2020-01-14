@@ -6,5 +6,4 @@ export class Ville {
 	public latitude: number;
 	public longitude: number;
 	public altitude: number;
-	public cinemas: Cinema[];
 }

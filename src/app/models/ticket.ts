@@ -7,6 +7,5 @@ export class Ticket {
 	public prix: number;
 	public codePayement: number;
 	public reservee: boolean;
-	public places: Place[];
 	public projection: Projection;
 }

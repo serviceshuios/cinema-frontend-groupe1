@@ -6,5 +6,4 @@ export class Salle {
 	public name: string;
 	public nombrePlaces: number;
 	public cinema: Cinema;
-	public places: Place[];
 }

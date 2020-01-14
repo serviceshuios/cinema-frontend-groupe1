@@ -15,10 +15,10 @@ export class FilmComponent implements OnInit {
     id: 0,
     titre: '',
     duree: 0,
-    realisateur: '',
+    realisation: '',
     description: '',
     photo: '',
-    date: new Date(),
+    dateSortie: new Date(),
     categorie: new Categorie()
   };
 
@@ -29,7 +29,7 @@ export class FilmComponent implements OnInit {
 
   ngOnInit() {
     this.getAll();
-    this.categories = this.categorieService.getAll();
+    this.getAllCategories()
   }
 
   save() {
@@ -37,13 +37,14 @@ export class FilmComponent implements OnInit {
       .subscribe(data => {
         this.film = data;
         this.getAll();
+        this.getAllCategories();
         this.film.id = 0;
         this.film.titre = '';
         this.film.duree = 0;
-        this.film.realisateur = '';
+        this.film.realisation = '';
         this.film.description = '';
         this.film.photo = '';
-        this.film.date = new Date();
+        this.film.dateSortie = new Date();
         this.film.categorie = new Categorie();
       });
   }
@@ -52,6 +53,13 @@ export class FilmComponent implements OnInit {
     this.filmService.getAll()
       .subscribe(data => {
         this.films = data
+      })
+  }
+
+  getAllCategories() {
+    this.categorieService.getAll()
+      .subscribe(data => {
+        this.categories = data
       })
   }
 

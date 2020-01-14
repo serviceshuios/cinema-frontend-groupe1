@@ -4,9 +4,9 @@ export class Film {
 	public id: number;
 	public titre: string;
 	public duree: number; //hours
-	public realisateur: string;
+	public realisation: string;
 	public description: string;
 	public photo: string;
-	public date: Date;
+	public dateSortie: Date;
 	public categorie: Categorie;
 }

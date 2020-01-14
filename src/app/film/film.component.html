@@ -1,136 +1,97 @@
 <div class="container">
 	<div class="row">
-		<div class="col-md-6">
+		<div class="col-md-4">
 			<div class="panel panel-primary">
 				<div class="panel-heading">
 					<h4>Ajouter Un Film</h4>
 				</div>
 				<div class="panel-body">
-					<!-- formulaire de saisie de commentaire -->
+
 					<div>
 
-						<form>
-							<div class="form-group">
-								<label for="titre">Titre</label>
-								<input id="titre" class="form-control" [(ngModel)]="film.titre">
-							</div>
-							<div class="form-group">
-								<label for="duree">Duree</label>
-								<input id="duree" class="form-control" [(ngModel)]="film.duree">
-							</div>
-							<div class="form-group">
-								<label for="realisateur">Réalisateur</label>
-								<input id="realisateur" class="form-control" [(ngModel)]="film.realisateur">
-							</div>
-							<div class="form-group">
-								<label for="description">Description</label>
-								<input id="description" class="form-control" [(ngModel)]="film.description">
-							</div>
-							<div class="form-group">
-								<label for="photo">Photo</label>
-								<input id="photo" class="form-control" aria-describedby="photoHelp"
-									[(ngModel)]="film.photo">
-								<small id="photoHelp" class="form-text text-muted">Entrez l'URL de l'affiche</small>
-							</div>
-							<div class="form-group">
-								<label for="date">Date de sortie</label>
-								<input id="date" class="form-control" aria-describedby="dateHelp"
-									[(ngModel)]="film.photo">
-								<small id="dateHelp" class="form-text text-muted">Format :</small>
-							</div>
-							<div class="form-group">
-								<label for="categorie">Catégorie</label>
-								<select class="form-control" ng-model="film.categorie"
-									ng-options="c for c in categories"></select>
-							</div>
-							<button (click)="save()" class="btn bg-primary espace">
-								Sauver
-							</button>
-						</form>
+						<div class="form-group">
+							<label for="titre">Titre</label>
+							<input id="titre" class="form-control" [(ngModel)]="film.titre">
+						</div>
+						<div class="form-group">
+							<label for="duree">Durée</label>
+							<input id="duree" class="form-control" [(ngModel)]="film.duree">
+						</div>
+						<div class="form-group">
+							<label for="realisation">Réalisateur</label>
+							<input id="realisation" class="form-control" [(ngModel)]="film.realisation">
+						</div>
+						<div class="form-group">
+							<label for="description">Description</label>
+							<input id="description" class="form-control" [(ngModel)]="film.description">
+						</div>
+						<div class="form-group">
+							<label for="photo">Photo</label>
+							<input id="photo" class="form-control" aria-describedby="photoHelp"
+								[(ngModel)]="film.photo">
+							<small id="photoHelp" class="form-text text-muted">Entrez l'URL de l'affiche</small>
+						</div>
+						<div class="form-group">
+							<label for="date">Date de sortie</label>
+							<input id="date" class="form-control" aria-describedby="dateHelp"
+								[(ngModel)]="film.dateSortie">
+							<small id="dateHelp" class="form-text text-muted">Format : YYYY-MM-DD</small>
+						</div>
+						<div class="form-group">
+							<label for="categorie">Catégorie</label>
+							<select class="form-control" [(ngModel)]="film.categorie">
+								<option *ngFor="let c of categories" [ngValue]="c">{{c.name}}</option>
+							</select>
+						</div>
+						<button (click)="save()" class="btn bg-primary espace">
+							Sauver
+						</button>
+
 					</div>
 				</div>
 			</div>
 		</div>
-		<div class="col-md-6">
+		<div class="col-md-8">
 			<div class="panel panel-danger">
 				<div class="panel-heading">
 					<h4>Lister les films</h4>
 				</div>
 				<div class="panel-body">
 					<div *ngIf="films.length>0">
-						<table class="table table-striped">
-							<tr>
-								<td>#</td>
-								<td>Titre</td>
-								<td>Durée</td>
-								<td>Réalisateur</td>
-								<td>Description</td>
-								<td>Photo</td>
-								<td>Date</td>
-								<td>Categorie</td>
-							</tr>
+						<table class="table">
+							<thead>
+								<tr>
+									<th scope="col">#</th>
+									<th scope="col">Titre</th>
+									<th scope="col">Durée</th>
+									<th scope="col">Réalisateur</th>
+									<th scope="col">Description</th>
+									<th scope="col">Photo</th>
+									<th scope="col">Date</th>
+									<!-- <th scope="col">Catégorie</th> -->
+									<th scope="col">Modifier</th>
+									<th scope="col">Supprimer</th>
+								</tr>
+							</thead>
 
-							<tr *ngFor="let f of films">
-								<td> {{f.id}}</td>
-								<td> {{f.titre}}</td>
-								<td> {{f.duree}}</td>
-								<td> {{f.realisateur}}</td>
-								<td> {{f.description}}</td>
-								<td> {{f.photo}}</td>
-								<td> {{f.date}}</td>
-								<td> {{f.categorie.name}}</td>
-
-								<div class="row">
-									<div class="col-md-6">
-										<div class="panel panel-primary">
-											<div class="panel-heading">
-												<h4>Ajouter Un Film</h4>
-											</div>
-											<div class="panel-body">
-												<!-- formulaire de saisie de commentaire -->
-												<div>
-													<input [(ngModel)]="film.titre">
-													<input [(ngModel)]="film.duree">
-													<input [(ngModel)]="film.realisateur">
-													<input [(ngModel)]="film.description">
-													<input [(ngModel)]="film.photo">
-													<input [(ngModel)]="film.date">
-
-													<button (click)="save()"
-														class="btn bg-primary espace">Ajouter</button>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="col-md-6">
-										<div class="panel panel-danger">
-											<div class="panel-heading">
-												<h4>Lister les films</h4>
-											</div>
-											<div class="panel-body">
-												<div *ngIf="films.length>0">
-													<table class="table table-striped">
-														<tr>
-															<td>ID</td>
-															<td>FILM</td>
-														</tr>
-														<tr *ngFor="let f of films">
-															<td> {{f.idFilm}}</td>
-															<td> {{f.titre}}</td>
-															<td> {{f.duree}}</td>
-															<td> {{f.realisateur}}</td>
-															<td> {{f.description}}</td>
-															<td> {{f.photo}}</td>
-															<td> {{f.date}}</td>
-
-															<td><a class="clickable" click="detail(f.id)">Modifier</a>
-															</td>
-															<td><a class="clickable" click="delete(f.id)">Supprimer</a>
-															</td>
-														</tr>
-													</table>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
+							<tbody>
+								<tr *ngFor="let f of films">
+									<th scope="col"> {{f.id}}</th>
+									<td> {{f.titre}} </td>
+									<td> {{f.duree}} </td>
+									<td> {{f.realisation}} </td>
+									<td> {{f.description}} </td>
+									<td> {{f.photo}} </td>
+									<td> {{f.dateSortie | date:'dd/MM/yyyy'}} </td>
+									<!-- <td> {{f.categorie.name}} </td> -->
+									<td><button class="btn btn-primary" (click)="detail(f.id)">Modifier</button></td>
+									<td><button class="btn btn-danger" (click)="delete(f.id)">Supprimer</button></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
