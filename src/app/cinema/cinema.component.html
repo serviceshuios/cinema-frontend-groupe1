@@ -32,7 +32,7 @@
 								<td>Altitude</td>
 								<td>nbSalle</td>
 								<td>Ville</td>
-								<td>Salles</td>
+								<!-- <td>Salles</td> -->
 							</tr>
 							<tr *ngFor="let ci of cinemas">
 								<td> {{ci.id}}</td>
@@ -42,7 +42,7 @@
 								<td> {{ci.altitude}}</td>
 								<td> {{ci.nombreSalles}}</td>
 								<td> {{ci.ville}}</td>
-								<td> {{ci.salles}}</td>
+								<!-- <td> {{ci.salles}}</td> -->
 								<td><a class="btn btn-primary" (click)="detail(ci.idCinema)">Detail</a></td>
 								<td><a class="btn btn-danger" (click)="delete(ci.idCinema)">Delete</a></td>
 							</tr>
