@@ -1,1 +1,53 @@
-<p>ville works!</p>
+<div class="container">
+<div class="row">
+<div class="col-md-6">
+<div class="panel panel-primary">
+<div class="panel-heading">
+<h4>Ajouter Une Ville</h4>
+</div>
+<div class="panel-body">
+<!-- formulaire de saisie de ville -->
+<div>
+<input [(ngModel)]="ville.name">
+<button (click)="save()" class="btn bg-primary espace">
+Ajouter
+</button>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-6">
+<div class="panel panel-danger">
+<div class="panel-heading">
+<h4>Lister les villes</h4>
+</div>
+<div class="panel-body">
+<div *ngIf="villes.length>0">
+<table class="table table-striped">
+<tr>
+<td>ID</td>
+<td>NAME</td>
+<td>LATITUDE</td>
+<td>LONGITUDE</td>
+<td>ALTITUDE</td>
+<td>CINEMAS</td>
+
+</tr>
+<tr *ngFor="let v of villes">
+<td> {{v.id}}</td>
+<td> {{v.name}}</td>
+<td> {{v.latitude}}</td>
+<td> {{v.longitude}}</td>
+<td> {{v.altitude}}</td>
+<td> {{v.cinemas}}</td>
+
+<td><a class="clickable" (click)="detail(v.idVille)">Detail</a></td>
+<td><a class="clickable" (click)="delete(v.idVille)">Delete</a></td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>

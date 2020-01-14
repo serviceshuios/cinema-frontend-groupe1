@@ -1,1 +1,52 @@
-<p>ticket works!</p>
+<div class="container">
+<div class="row">
+<div class="col-md-6">
+<div class="panel panel-primary">
+<div class="panel-heading">
+<h4>Ajouter Un Ticket</h4>
+</div>
+<div class="panel-body">
+<!-- formulaire de saisie de ticket -->
+<div>
+<input [(ngModel)]="ticket.nomClient">
+<button (click)="save()" class="btn bg-primary espace">
+Ajouter
+</button>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-6">
+<div class="panel panel-danger">
+<div class="panel-heading">
+<h4>Lister les tickets</h4>
+</div>
+<div class="panel-body">
+<div *ngIf="tickets.length>0">
+<table class="table table-striped">
+<tr>
+<td>ID</td>
+<td>NOMCLIENT</td>
+<td>PRIX</td>
+<td>CODEPAYEMENT</td>
+<td>RESERVEE</td>
+<td>PLACES</td>
+
+</tr>
+<tr *ngFor="let t of tickets">
+<td> {{t.id}}</td>
+<td> {{t.nomClient}}</td>
+<td> {{t.prix}}</td>
+<td> {{t.codePayement}}</td>
+<td> {{t.reservee}}</td>
+<td> {{t.places}}</td>
+<td><a class="clickable" (click)="detail(t.idTicket)">Detail</a></td>
+<td><a class="clickable" (click)="delete(t.idTicket)">Delete</a></td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
