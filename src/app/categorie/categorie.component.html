@@ -8,7 +8,13 @@
 <div class="panel-body">
 <!-- formulaire de saisie de categorie -->
 <div>
-<input [(ngModel)]="categorie.name">
+
+	<div class="form-group">
+								<label for="name">Nom</label>
+								<input id="name" class="form-control" [(ngModel)]="categorie.name">
+							</div>
+
+<!-- <input [(ngModel)]="categorie.name"> -->
 <button (click)="save()" class="btn bg-primary espace">
 Ajouter
 </button>
