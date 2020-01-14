@@ -1,1 +1,61 @@
-<p>film works!</p>
+<div class="container">
+<div class="row">
+<div class="col-md-6">
+<div class="panel panel-primary">
+<div class="panel-heading">
+<h4>Ajouter Une Filiere</h4>
+</div>
+<div class="panel-body">
+<!-- formulaire de saisie de commentaire -->
+<div>
+<input [(ngModel)]="film.titre">
+<input [(ngModel)]="film.duree">
+<input [(ngModel)]="film.realisateur">
+<input [(ngModel)]="film.description">
+<input [(ngModel)]="film.photo">
+<input [(ngModel)]="film.date">
+<input [(ngModel)]="film.categorie">
+
+
+
+
+<button (click)="save()" class="btn bg-primary espace">
+Ajouter
+</button>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-6">
+<div class="panel panel-danger">
+<div class="panel-heading">
+<h4>Lister les films</h4>
+</div>
+<div class="panel-body">
+<div *ngIf="films.length>0">
+<table class="table table-striped">
+<tr>
+<td>ID</td>
+<td>FILM</td>
+</tr>
+<tr *ngFor="let f of films">
+<td> {{f.idFilm}}</td>
+<td> {{f.titre}}</td>
+<td> {{f.duree}}</td>
+<td> {{f.realisateur}}</td>
+<td> {{f.description}}</td>
+<td> {{f.photo}}</td>
+<td> {{f.date}}</td>
+<td> {{f.categorie}}</td>
+
+
+<td><a class="clickable" click="detailFilm(f.idFilm)">Detail</a></td>
+<td><a class="clickable" click="deleteFilm(f.idFilm)">Delete</a></td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
