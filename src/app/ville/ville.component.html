@@ -29,10 +29,10 @@ Date
 								<input id="name" class="form-control" [(ngModel)]="ville.altitude">
 							</div>
 
-							<div class="form-group">
+							<!-- <div class="form-group">
 								<label for="name">Cinemas</label>
 								<input id="name" class="form-control" [(ngModel)]="ville.cinemas">
-							</div>
+							</div> -->
 
 
 						<!-- <input [(ngModel)]="ville.name"> -->
@@ -51,15 +51,20 @@ Date
 				<div class="panel-body">
 					<div *ngIf="villes.length>0">
 						<table class="table table-striped">
+							<thead>
 							<tr>
-								<td>ID</td>
-								<td>NAME</td>
-								<td>LATITUDE</td>
-								<td>LONGITUDE</td>
-								<td>ALTITUDE</td>
-								<td>CINEMAS</td>
+								<td>id</td>
+								<td>Name</td>
+								<td>Latitude</td>
+								<td>Longitude</td>
+								<td>Altitude</td>
+								<td>Cinemas</td>
+
+								<!-- <td scope="col">Detail</td>
+									<td scope="col">Delete</td> -->
 
 							</tr>
+							</thead>
 							<tr *ngFor="let v of villes">
 								<td> {{v.id}}</td>
 								<td> {{v.name}}</td>
