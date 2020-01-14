@@ -27,13 +27,13 @@ Ajouter
 <table class="table table-striped">
 <tr>
 <td>ID</td>
-<td>SEANCE</td>
+<td>HEURE DEBUT</td>
 </tr>
-<tr *ngFor="let f of seances">
-<td> {{f.idSeance}}</td>
-<td> {{f.heureDebut}}</td>
-<td><a class="clickable" click="detailSeance(f.idSeance)">Detail</a></td>
-<td><a class="clickable" click="deleteSeance(f.idSeance)">Delete</a></td>
+<tr *ngFor="let s of seances">
+<td> {{s.id}}</td>
+<td> {{s.heureDebut}}</td>
+<td><a class="clickable" click="detailSeance(s.idSeance)">Detail</a></td>
+<td><a class="clickable" click="deleteSeance(s.idSeance)">Delete</a></td>
 </tr>
 </table>
 </div>
