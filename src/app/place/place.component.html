@@ -9,6 +9,10 @@
 <!-- formulaire de saisie de place -->
 <div>
 <input [(ngModel)]="place.numero">
+<input [(ngModel)]="place.latitude">
+<input [(ngModel)]="place.longitude">
+<input [(ngModel)]="place.altitude">
+
 <button (click)="save()" class="btn bg-primary espace">
 Ajouter
 </button>
