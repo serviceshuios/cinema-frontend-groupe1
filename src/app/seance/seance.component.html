@@ -1,1 +1,44 @@
-<p>seance works!</p>
+
+<div class="container">
+<div class="row">
+<div class="col-md-6">
+<div class="panel panel-primary">
+<div class="panel-heading">
+<h4>Ajouter Une Seance</h4>
+</div>
+<div class="panel-body">
+<!-- formulaire de saisie de commentaire -->
+<div>
+<input [(ngModel)]="seance.heureDebut">
+<button (click)="save()" class="btn bg-primary espace">
+Ajouter
+</button>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-6">
+<div class="panel panel-danger">
+<div class="panel-heading">
+<h4>Lister les seances</h4>
+</div>
+<div class="panel-body">
+<div *ngIf="seances.length>0">
+<table class="table table-striped">
+<tr>
+<td>ID</td>
+<td>SEANCE</td>
+</tr>
+<tr *ngFor="let f of seances">
+<td> {{f.idSeance}}</td>
+<td> {{f.heureDebut}}</td>
+<td><a class="clickable" click="detailSeance(f.idSeance)">Detail</a></td>
+<td><a class="clickable" click="deleteSeance(f.idSeance)">Delete</a></td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
