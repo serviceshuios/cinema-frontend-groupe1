@@ -8,8 +8,17 @@
 <div class="panel-body">
 <!-- formulaire de saisie de categorie -->
 <div>
-<input [(ngModel)]="projection.date">
-<input [(ngModel)]="projection.prix">
+	<div class="form-group">
+								<label for="name">Date</label>
+								<input id="name" class="form-control" [(ngModel)]="projection.date">
+							</div>
+
+							<div class="form-group">
+								<label for="name">Prix</label>
+								<input id="name" class="form-control" [(ngModel)]="projection.prix">
+							</div>
+<!-- <input [(ngModel)]="projection.date">
+<input [(ngModel)]="projection.prix"> -->
 
 <button (click)="save()" class="btn bg-primary espace">
 Ajouter
