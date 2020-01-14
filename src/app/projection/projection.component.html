@@ -25,6 +25,8 @@ Ajouter
 </div>
 <div class="panel-body">
 <div *ngIf="projections.length>0">
+
+
 <table class="table table-striped">
 <tr>
 <td>ID</td>
@@ -37,6 +39,8 @@ Ajouter
 
 <td><a class="clickable" (click)="detail(p.idProjection)">Detail</a></td>
 <td><a class="clickable" (click)="delete(p.idProjection)">Delete</a></td>
+<br/>
+<br/>
 </tr>
 </table>
 </div>
@@ -45,3 +49,4 @@ Ajouter
 </div>
 </div>
 </div>
+
