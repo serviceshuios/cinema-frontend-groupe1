@@ -1,1 +1,53 @@
-<p>place works!</p>
+<div class="container">
+<div class="row">
+<div class="col-md-6">
+<div class="panel panel-primary">
+<div class="panel-heading">
+<h4>Ajouter Une Categorie</h4>
+</div>
+<div class="panel-body">
+<!-- formulaire de saisie de place -->
+<div>
+<input [(ngModel)]="place.numero">
+<button (click)="save()" class="btn bg-primary espace">
+Ajouter
+</button>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-6">
+<div class="panel panel-danger">
+<div class="panel-heading">
+<h4>Lister les places</h4>
+</div>
+<div class="panel-body">
+<div *ngIf="places.length>0">
+<table class="table table-striped">
+<tr>
+<td>ID</td>
+<td>NUMERO</td>
+<td>LATITUDE</td>
+<td>LONGITUDE</td>
+<td>ALTITUDE</td>
+<td>TICKET</td>
+<td>SALLE</td>
+</tr>
+<tr *ngFor="let p of places">
+<td> {{p.id}}</td>
+<td> {{p.numero}}</td>
+<td> {{p.latitude}}</td>
+<td> {{p.longitude}}</td>
+<td> {{p.altitude}}</td>
+<td> {{p.ticket}}</td>
+<td> {{p.salle}}</td>
+<td><a class="clickable" (click)="detail(p.idPlace)">Detail</a></td>
+<td><a class="clickable" (click)="delete(p.idPlace)">Delete</a></td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>

@@ -8,7 +8,11 @@
       "name": "Launch Chrome cinema-frontend-groupe1 on Angular CLI Server",
       "type": "chrome",
       "request": "launch",
+<<<<<<< HEAD
       "port": 9275,
+=======
+      "port": 9204,
+>>>>>>> b48675455a7c18bad7b917bef8dce03a2df398df
       "webRoot": "${workspaceFolder}",
       "url": "http://localhost:4200/#"
     }
