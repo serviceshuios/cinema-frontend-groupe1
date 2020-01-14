@@ -1,1 +1,47 @@
-<p>projection works!</p>
+<div class="container">
+<div class="row">
+<div class="col-md-6">
+<div class="panel panel-primary">
+<div class="panel-heading">
+<h4>Ajouter Une projection</h4>
+</div>
+<div class="panel-body">
+<!-- formulaire de saisie de categorie -->
+<div>
+<input [(ngModel)]="projection.date">
+<input [(ngModel)]="projection.prix">
+
+<button (click)="save()" class="btn bg-primary espace">
+Ajouter
+</button>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-6">
+<div class="panel panel-danger">
+<div class="panel-heading">
+<h4>Lister les Projections</h4>
+</div>
+<div class="panel-body">
+<div *ngIf="projections.length>0">
+<table class="table table-striped">
+<tr>
+<td>ID</td>
+<td>PROJECTION</td>
+</tr>
+<tr *ngFor="let p of projections">
+<td> {{p.idProjection}}</td>
+<td> {{p.date}}</td> 
+<td> {{p.prix}}</td>
+
+<td><a class="clickable" (click)="detail(p.idProjection)">Detail</a></td>
+<td><a class="clickable" (click)="delete(p.idProjection)">Delete</a></td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
