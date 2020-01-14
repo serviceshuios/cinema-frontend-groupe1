@@ -8,7 +8,24 @@
 <div class="panel-body">
 <!-- formulaire de saisie de salle -->
 <div>
-<input [(ngModel)]="salle.name">
+
+	<div class="form-group">
+								<label for="name">Nom</label>
+								<input id="name" class="form-control" [(ngModel)]="salle.name">
+							</div>
+
+							<div class="form-group">
+								<label for="name">Nombre de places</label>
+								<input id="name" class="form-control" [(ngModel)]="salle.nombrePlaces">
+							</div>
+
+							<div class="form-group">
+								<label for="name">Cinema</label>
+								<input id="name" class="form-control" [(ngModel)]="salle.cinema">
+							</div>
+
+
+<!-- <input [(ngModel)]="salle.name"> -->
 <button (click)="save()" class="btn bg-primary espace">
 Ajouter
 </button>
@@ -29,7 +46,7 @@ Ajouter
 <td>NAME</td>
 <td>NOMBREPLACES</td>
 <td>CINEMA</td>
-<td>PLACES</td>
+
 
 </tr>
 <tr *ngFor="let s of salles">
@@ -37,7 +54,7 @@ Ajouter
 <td> {{s.name}}</td>
 <td> {{s.nombrePlaces}}</td>
 <td> {{s.cinema}}</td>
-<td> {{s.places}}</td>
+
 
 <td><a class="clickable" (click)="detail(s.idSalle)">Detail</a></td>
 <td><a class="clickable" (click)="delete(s.idSalle)">Delete</a></td>
