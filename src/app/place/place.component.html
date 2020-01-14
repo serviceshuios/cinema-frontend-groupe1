@@ -30,8 +30,7 @@ Ajouter
 <td>LATITUDE</td>
 <td>LONGITUDE</td>
 <td>ALTITUDE</td>
-<td>TICKET</td>
-<td>SALLE</td>
+
 </tr>
 <tr *ngFor="let p of places">
 <td> {{p.id}}</td>
@@ -39,8 +38,7 @@ Ajouter
 <td> {{p.latitude}}</td>
 <td> {{p.longitude}}</td>
 <td> {{p.altitude}}</td>
-<td> {{p.ticket}}</td>
-<td> {{p.salle}}</td>
+
 <td><a class="clickable" (click)="detail(p.idPlace)">Detail</a></td>
 <td><a class="clickable" (click)="delete(p.idPlace)">Delete</a></td>
 </tr>
