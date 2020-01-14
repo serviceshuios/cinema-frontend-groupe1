@@ -15,6 +15,7 @@ import { TicketComponent } from './ticket/ticket.component';
 import { CategorieComponent } from './categorie/categorie.component';
 import { FilmComponent } from './film/film.component';
 import { ProjectionfilmComponent } from './projectionFilm/projectionfilm/projectionfilm.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { ProjectionfilmComponent } from './projectionFilm/projectionfilm/project
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    RouterModule
+    RouterModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
