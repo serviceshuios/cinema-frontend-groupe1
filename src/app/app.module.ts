@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { CinemaComponent } from './cinema/cinema.component';
@@ -32,7 +33,8 @@ import { ProjectionfilmComponent } from './projectionFilm/projectionfilm/project
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
