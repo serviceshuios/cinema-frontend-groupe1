@@ -1,55 +1,55 @@
 <div class="container">
-<div class="row">
-<div class="col-md-6">
-<div class="panel panel-primary">
-<div class="panel-heading">
-<h4>Ajouter Une Categorie</h4>
-</div>
-<div class="panel-body">
-<!-- formulaire de saisie de cinema -->
-<div>
-<input [(ngModel)]="cinema.name">
-<button (click)="save()" class="btn bg-primary espace">
-Ajouter
-</button>
-</div>
-</div>
-</div>
-</div>
-<div class="col-md-6">
-<div class="panel panel-danger">
-<div class="panel-heading">
-<h4>Lister les cinemas</h4>
-</div>
-<div class="panel-body">
-<div *ngIf="cinemas.length>0">
-<table class="table table-striped">
-<tr>
-<td>ID</td>
-<td>NOM</td>
-<td>LATITUDE</td>
-<td>LONGITUDE</td>
-<td>ALTITUDE</td>
-<td>NbSALLES</td>
-<td>VILLE</td>
-<td>SALLES</td>
-</tr>
-<tr *ngFor="let ci of cinemas">
-<td> {{ci.id}}</td>
-<td> {{ci.name}}</td>
-<td> {{ci.latitude}}</td>
-<td> {{ci.longitude}}</td>
-<td> {{ci.altitude}}</td>
-<td> {{ci.nombreSalles}}</td>
-<td> {{ci.ville}}</td>
-<td> {{ci.salles}}</td>
-<td><a class="clickable" (click)="detail(ci.idCinema)">Detail</a></td>
-<td><a class="clickable" (click)="delete(ci.idCinema)">Delete</a></td>
-</tr>
-</table>
-</div>
-</div>
-</div>
-</div>
-</div>
+	<div class="row">
+		<div class="col-md-6">
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<h4>Ajouter Un Cinema</h4>
+				</div>
+				<div class="panel-body">
+					<!-- formulaire de saisie de cinema -->
+					<div>
+						<input [(ngModel)]="cinema.name">
+						<button (click)="save()" class="btn bg-primary espace">
+							Ajouter
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="panel panel-danger">
+				<div class="panel-heading">
+					<h4>Lister les cinemas</h4>
+				</div>
+				<div class="panel-body">
+					<div *ngIf="cinemas.length>0">
+						<table class="table table-striped">
+							<tr>
+								<td>id</td>
+								<td>Nom</td>
+								<td>Latitude</td>
+								<td>Longitude</td>
+								<td>Altitude</td>
+								<td>nbSalle</td>
+								<td>Ville</td>
+								<td>Salles</td>
+							</tr>
+							<tr *ngFor="let ci of cinemas">
+								<td> {{ci.id}}</td>
+								<td> {{ci.name}}</td>
+								<td> {{ci.latitude}}</td>
+								<td> {{ci.longitude}}</td>
+								<td> {{ci.altitude}}</td>
+								<td> {{ci.nombreSalles}}</td>
+								<td> {{ci.ville}}</td>
+								<td> {{ci.salles}}</td>
+								<td><a class="btn btn-primary" (click)="detail(ci.idCinema)">Detail</a></td>
+								<td><a class="btn btn-danger" (click)="delete(ci.idCinema)">Delete</a></td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>

@@ -32,15 +32,15 @@ Ajouter
 <table class="table table-striped">
 <tr>
 <td>ID</td>
-<td>FILIERE</td>
-<td>FILMS</td>
+<td>CATEGORIE</td>
+<!-- <td>FILMS</td> -->
 </tr>
 <tr *ngFor="let cat of categories">
 <td> {{cat.id}}</td>
 <td> {{cat.name}}</td>
 
-<td><a class="clickable" (click)="detail(cat.id)">Detail</a></td>
-<td><a class="clickable" (click)="delete(cat.id)">Delete</a></td>
+<td><a class="btn btn-primary" (click)="detail(cat.id)">Detail</a></td>
+<td><a class="btn btn-danger" (click)="delete(cat.id)">Delete</a></td>
 </tr>
 </table>
 </div>

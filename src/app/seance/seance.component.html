@@ -32,8 +32,8 @@ Ajouter
 <tr *ngFor="let s of seances">
 <td> {{s.id}}</td>
 <td> {{s.heureDebut}}</td>
-<td><a class="clickable" click="detailSeance(s.idSeance)">Detail</a></td>
-<td><a class="clickable" click="deleteSeance(s.idSeance)">Delete</a></td>
+<td><a class="btn btn-primary" click="detailSeance(s.idSeance)">Detail</a></td>
+<td><a class="btn btn-danger" click="deleteSeance(s.idSeance)">Delete</a></td>
 </tr>
 </table>
 </div>

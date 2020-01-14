@@ -18,7 +18,7 @@ export class CinemaComponent implements OnInit {
     altitude: 0,
     nombreSalles: 0,
     ville: new Ville(),
-    salles: []
+    // salles: []
   };
 
   cinemas;
