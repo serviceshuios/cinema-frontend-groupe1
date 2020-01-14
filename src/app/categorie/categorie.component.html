@@ -30,10 +30,11 @@ Ajouter
 <td>FILMS</td>
 </tr>
 <tr *ngFor="let cat of categories">
-<td> {{cat.idCategorie}}</td>
-<td> {{cat.nomCategorie}}</td>
-<td><a class="clickable" (click)="detail(cat.idCategorie)">Detail</a></td>
-<td><a class="clickable" (click)="delete(cat.idCategorie)">Delete</a></td>
+<td> {{cat.id}}</td>
+<td> {{cat.name}}</td>
+
+<td><a class="clickable" (click)="detail(cat.id)">Detail</a></td>
+<td><a class="clickable" (click)="delete(cat.id)">Delete</a></td>
 </tr>
 </table>
 </div>
