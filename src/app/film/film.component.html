@@ -1,58 +1,89 @@
 <div class="container">
-<div class="row">
-<div class="col-md-6">
-<div class="panel panel-primary">
-<div class="panel-heading">
-<h4>Ajouter Un Film</h4>
-</div>
-<div class="panel-body">
-<!-- formulaire de saisie de commentaire -->
-<div>
-<input [(ngModel)]="film.titre">
-<input [(ngModel)]="film.duree">
-<input [(ngModel)]="film.realisateur">
-<input [(ngModel)]="film.description">
-<input [(ngModel)]="film.photo">
-<input [(ngModel)]="film.date">
-<input [(ngModel)]="film.categorie">
+	<div class="row">
+		<div class="col-md-6">
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<h4>Ajouter Un Film</h4>
+				</div>
+				<div class="panel-body">
+					<!-- formulaire de saisie de commentaire -->
+					<div>
 
-<button (click)="save()" class="btn bg-primary espace">
-Ajouter
-</button>
-</div>
-</div>
-</div>
-</div>
-<div class="col-md-6">
-<div class="panel panel-danger">
-<div class="panel-heading">
-<h4>Lister les films</h4>
-</div>
-<div class="panel-body">
-<div *ngIf="films.length>0">
-<table class="table table-striped">
-<tr>
-<td>ID</td>
-<td>FILM</td>
-</tr>
-<tr *ngFor="let f of films">
-<td> {{f.idFilm}}</td>
-<td> {{f.titre}}</td>
-<td> {{f.duree}}</td>
-<td> {{f.realisateur}}</td>
-<td> {{f.description}}</td>
-<td> {{f.photo}}</td>
-<td> {{f.date}}</td>
-<td> {{f.categorie}}</td>
+						<form>
+							<div class="form-group">
+								<label for="titre">Titre</label>
+								<input id="titre" class="form-control" [(ngModel)]="film.titre">
+							</div>
+							<div class="form-group">
+								<label for="duree">Duree</label>
+								<input id="duree" class="form-control" [(ngModel)]="film.duree">
+							</div>
+							<div class="form-group">
+								<label for="realisateur">Réalisateur</label>
+								<input id="realisateur" class="form-control" [(ngModel)]="film.realisateur">
+							</div>
+							<div class="form-group">
+								<label for="description">Description</label>
+								<input id="description" class="form-control" [(ngModel)]="film.description">
+							</div>
+							<div class="form-group">
+								<label for="photo">Photo</label>
+								<input id="photo" class="form-control" aria-describedby="photoHelp" [(ngModel)]="film.photo">
+								<small id="photoHelp" class="form-text text-muted">Entrez l'URL de l'affiche</small>
+							</div>
+							<div class="form-group">
+								<label for="date">Date de sortie</label>
+								<input id="date" class="form-control" aria-describedby="dateHelp" [(ngModel)]="film.photo">
+								<small id="dateHelp" class="form-text text-muted">Format :</small>
+							</div>
+							<div class="form-group">
+								<label for="categorie">Catégorie</label>
+								<select class="form-control" ng-model="film.categorie" ng-options="c for c in categories"></select>
+							</div>
+							<button (click)="save()" class="btn bg-primary espace">
+								Sauver
+							</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="panel panel-danger">
+				<div class="panel-heading">
+					<h4>Lister les films</h4>
+				</div>
+				<div class="panel-body">
+					<div *ngIf="films.length>0">
+						<table class="table table-striped">
+							<tr>
+								<td>#</td>
+								<td>Titre</td>
+								<td>Durée</td>
+								<td>Réalisateur</td>
+								<td>Description</td>
+								<td>Photo</td>
+								<td>Date</td>
+								<td>Categorie</td>
+							</tr>
 
+							<tr *ngFor="let f of films">
+								<td> {{f.id}}</td>
+								<td> {{f.titre}}</td>
+								<td> {{f.duree}}</td>
+								<td> {{f.realisateur}}</td>
+								<td> {{f.description}}</td>
+								<td> {{f.photo}}</td>
+								<td> {{f.date}}</td>
+								<td> {{f.categorie.name}}</td>
 
-<td><a class="clickable" click="detailFilm(f.idFilm)">Detail</a></td>
-<td><a class="clickable" click="deleteFilm(f.idFilm)">Delete</a></td>
-</tr>
-</table>
-</div>
-</div>
-</div>
-</div>
-</div>
+								<td><a class="clickable" click="detail(f.id)">Modifier</a></td>
+								<td><a class="clickable" click="delete(f.id)">Supprimer</a></td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>

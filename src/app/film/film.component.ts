@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FilmService } from '../film.service';
 import { Film } from '../models/film';
 import { Categorie } from '../models/categorie';
+import { CategorieService } from '../categorie.service';
 
 @Component({
   selector: 'app-film',
@@ -22,11 +23,13 @@ export class FilmComponent implements OnInit {
   };
 
   films;
+  categories;
 
-  constructor(private filmService: FilmService) { }
+  constructor(private filmService: FilmService, private categorieService: CategorieService) { }
 
   ngOnInit() {
     this.getAll();
+    this.categories = this.categorieService.getAll();
   }
 
   save() {
