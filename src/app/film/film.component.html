@@ -1,4 +1,5 @@
 <div class="container">
+<<<<<<< HEAD
 	<div class="row">
 		<div class="col-md-6">
 			<div class="panel panel-primary">
@@ -76,6 +77,49 @@
 								<td> {{f.photo}}</td>
 								<td> {{f.date}}</td>
 								<td> {{f.categorie.name}}</td>
+=======
+<div class="row">
+<div class="col-md-6">
+<div class="panel panel-primary">
+<div class="panel-heading">
+<h4>Ajouter Un Film</h4>
+</div>
+<div class="panel-body">
+<!-- formulaire de saisie de commentaire -->
+<div>
+<input [(ngModel)]="film.titre">
+<input [(ngModel)]="film.duree">
+<input [(ngModel)]="film.realisateur">
+<input [(ngModel)]="film.description">
+<input [(ngModel)]="film.photo">
+<input [(ngModel)]="film.date">
+
+<button (click)="save()" class="btn bg-primary espace">Ajouter</button>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-6">
+<div class="panel panel-danger">
+<div class="panel-heading">
+<h4>Lister les films</h4>
+</div>
+<div class="panel-body">
+<div *ngIf="films.length>0">
+<table class="table table-striped">
+<tr>
+<td>ID</td>
+<td>FILM</td>
+</tr>
+<tr *ngFor="let f of films">
+<td> {{f.idFilm}}</td>
+<td> {{f.titre}}</td>
+<td> {{f.duree}}</td>
+<td> {{f.realisateur}}</td>
+<td> {{f.description}}</td>
+<td> {{f.photo}}</td>
+<td> {{f.date}}</td>
+>>>>>>> 074cac2e6250613db34a4a387d6ed271d9974690
 
 								<td><a class="clickable" click="detail(f.id)">Modifier</a></td>
 								<td><a class="clickable" click="delete(f.id)">Supprimer</a></td>
