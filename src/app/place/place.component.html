@@ -8,10 +8,28 @@
 <div class="panel-body">
 <!-- formulaire de saisie de place -->
 <div>
-<input [(ngModel)]="place.numero">
+
+	<div class="form-group">
+								<label for="name">Numero</label>
+								<input id="name" class="form-control" [(ngModel)]="place.numero">
+							</div>
+							<div class="form-group">
+								<label for="name">Latitude</label>
+								<input id="name" class="form-control" [(ngModel)]="place.latitude">
+							</div>
+							<div class="form-group">
+								<label for="name">Longitude</label>
+								<input id="name" class="form-control" [(ngModel)]="place.longitude">
+							</div>
+							<div class="form-group">
+								<label for="name">Altitude</label>
+								<input id="name" class="form-control" [(ngModel)]="place.altitude">
+							</div>
+
+<!-- <input [(ngModel)]="place.numero">
 <input [(ngModel)]="place.latitude">
 <input [(ngModel)]="place.longitude">
-<input [(ngModel)]="place.altitude">
+<input [(ngModel)]="place.altitude"> -->
 
 <button (click)="save()" class="btn bg-primary espace">
 Ajouter

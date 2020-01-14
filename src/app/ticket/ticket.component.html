@@ -8,7 +8,30 @@
 <div class="panel-body">
 <!-- formulaire de saisie de ticket -->
 <div>
-<input [(ngModel)]="ticket.nomClient">
+	
+	<div class="form-group">
+								<label for="name">Nom Client</label>
+								<input id="name" class="form-control" [(ngModel)]="ticket.nomClient">
+							</div>
+							<div class="form-group">
+								<label for="name">Prix</label>
+								<input id="name" class="form-control" [(ngModel)]="ticket.prix">
+							</div>
+							<div class="form-group">
+								<label for="name">Code Payement</label>
+								<input id="name" class="form-control" [(ngModel)]="ticket.codePayement">
+							</div>
+							<div class="form-group">
+								<label for="name">Reservee</label>
+								<input id="name" class="form-control" [(ngModel)]="ticket.reservee">
+							</div>
+
+							<div class="form-group">
+								<label for="name">Places</label>
+								<input id="name" class="form-control" [(ngModel)]="ticket.places">
+							</div>
+
+<!-- <input [(ngModel)]="ticket.nomClient"> -->
 <button (click)="save()" class="btn bg-primary espace">
 Ajouter
 </button>
