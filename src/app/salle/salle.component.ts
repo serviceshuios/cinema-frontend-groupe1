@@ -14,8 +14,7 @@ export class SalleComponent implements OnInit {
     id: 0,
     name: '',
     nombrePlaces: 0,
-    cinema: new Cinema(),
-    places: []
+    cinema: new Cinema()
   };
 
   salles;

@@ -15,7 +15,6 @@ export class VilleComponent implements OnInit {
     latitude: 0,
     longitude: 0,
     altitude: 0,
-    cinemas: []
   };
 
   villes;

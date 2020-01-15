@@ -11,8 +11,7 @@ export class CategorieComponent implements OnInit {
 
   categorie: Categorie = {
     id: 0,
-    name: '',
-    films: []
+    name: ''
   };
 
   categories;

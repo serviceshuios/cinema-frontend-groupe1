@@ -16,7 +16,6 @@ export class TicketComponent implements OnInit {
     prix: 0,
     codePayement: 0,
     reservee: false,
-    places: [],
     projection: new Projection()
   };
 

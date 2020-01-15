@@ -14,7 +14,6 @@ export class ProjectionComponent implements OnInit {
     id: 0,
     date: new Date(),
     prix: 0,
-    tickets: [],
     seance: new Seance()
   };
 
