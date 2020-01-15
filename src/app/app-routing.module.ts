@@ -7,7 +7,6 @@ import { SalleComponent } from './salle/salle.component';
 import { PlaceComponent } from './place/place.component';
 import { FilmComponent } from './film/film.component';
 import { SeanceComponent } from './seance/seance.component';
-import { ProjectionComponent } from './projection/projection.component';
 import { TicketComponent } from './ticket/ticket.component';
 
 
@@ -21,7 +20,6 @@ const routes: Routes = [
 {path: 'places', component: PlaceComponent},
 {path: 'films', component: FilmComponent},
 {path: 'seances', component: SeanceComponent},
-{path: 'projections', component: ProjectionComponent},
 {path: 'tickets', component: TicketComponent},
 
 //déclaration de la route par défaut

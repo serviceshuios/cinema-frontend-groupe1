@@ -9,12 +9,10 @@ import { CinemaComponent } from './cinema/cinema.component';
 import { VilleComponent } from './ville/ville.component';
 import { SalleComponent } from './salle/salle.component';
 import { PlaceComponent } from './place/place.component';
-import { ProjectionComponent } from './projection/projection.component';
 import { SeanceComponent } from './seance/seance.component';
 import { TicketComponent } from './ticket/ticket.component';
 import { CategorieComponent } from './categorie/categorie.component';
 import { FilmComponent } from './film/film.component';
-import { ProjectionfilmComponent } from './projectionFilm/projectionfilm/projectionfilm.component';
 import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
@@ -24,12 +22,10 @@ import { AppRoutingModule } from './app-routing.module';
     VilleComponent,
     SalleComponent,
     PlaceComponent,
-    ProjectionComponent,
     SeanceComponent,
     TicketComponent,
     CategorieComponent,
-    FilmComponent,
-    ProjectionfilmComponent
+    FilmComponent
   ],
   imports: [
     BrowserModule,
