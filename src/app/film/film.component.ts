@@ -4,14 +4,17 @@ import { Film } from '../models/film';
 import { Categorie } from '../models/categorie';
 import { CategorieService } from '../categorie.service';
 
+
 @Component({
   selector: 'app-film',
   templateUrl: './film.component.html',
   styleUrls: ['./film.component.css']
 })
 export class FilmComponent implements OnInit {
+// cheminImage: any = "C:/Users/IN-MP-031/Desktop/photos/bob.jpg";
 
   film: Film = {
+
     id: 0,
     titre: '',
     duree: 0,
@@ -21,6 +24,10 @@ export class FilmComponent implements OnInit {
     dateSortie: new Date(),
     categorie: new Categorie()
   };
+
+   
+   
+
 
   films;
   categories;
