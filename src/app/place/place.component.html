@@ -1,6 +1,6 @@
 <div class="container">
 <div class="row">
-<div class="col-md-6">
+<div class="col-md-5">
 <div class="panel panel-primary">
 <div class="panel-heading">
 <h4>Ajouter Une Place</h4>
@@ -51,7 +51,7 @@ Ajouter
 </div>
 </div>
 </div>
-<div class="col-md-6">
+<div class="col-md-7">
 <div class="panel panel-danger">
 <div class="panel-heading">
 <h4>Lister les places</h4>
@@ -59,16 +59,25 @@ Ajouter
 <div class="panel-body">
 <div *ngIf="places.length>0">
 <table class="table table-striped">
+	<thead>
 <tr>
-<td>ID</td>
+	<th scope="col">Id</th>
+	<th scope="col">Numero</th>
+	<th scope="col">Latitude</th>
+	<th scope="col">Longitude</th>
+	<th scope="col">Altitude</th>
+	<th scope="col">Modifier</th>
+	<th scope="col">Supprimer</th>
+<!-- <td>ID</td>
 <td>NUMERO</td>
 <td>LATITUDE</td>
 <td>LONGITUDE</td>
-<td>ALTITUDE</td>
+<td>ALTITUDE</td> -->
 
 </tr>
+</thead>
 <tr *ngFor="let p of places">
-<td> {{p.id}}</td>
+<th scope="col"> {{p.id}}</th>
 <td> {{p.numero}}</td>
 <td> {{p.latitude}}</td>
 <td> {{p.longitude}}</td>
