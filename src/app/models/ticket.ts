@@ -1,5 +1,4 @@
-import { Place } from './place';
-import { Projection } from './projection';
+
 
 export class Ticket {
 	public id: number;
@@ -7,5 +6,4 @@ export class Ticket {
 	public prix: number;
 	public codePayement: number;
 	public reservee: boolean;
-	public projection: Projection;
 }
