@@ -33,7 +33,7 @@
 						<div class="form-group">
 							<label for="categorie">Ville</label>
 							<select class="form-control" [(ngModel)]="cinema.ville">
-								<option *ngFor="let ci of cinemas" [ngValue]="ci">{{ci.name}}</option>
+								<option *ngFor="let v of villes" [ngValue]="v">{{v.name}}</option>
 							</select>
 						</div>
 						<!-- <input [(ngModel)]="cinema.name"> -->
@@ -71,8 +71,8 @@
 								<td> {{ci.nombreSalles}}</td>
 								<td> {{ci.ville}}</td>
 								<!-- <td> {{ci.salles}}</td> -->
-								<td><a class="btn btn-primary" (click)="detail(ci.idCinema)">Detail</a></td>
-								<td><a class="btn btn-danger" (click)="delete(ci.idCinema)">Delete</a></td>
+								<td><button class="btn btn-primary" (click)="detail(ci.id)">Detail</button></td>
+								<td><button class="btn btn-danger" (click)="delete(ci.id)">Delete</button></td>
 							</tr>
 						</table>
 					</div>
