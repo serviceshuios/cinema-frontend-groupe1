@@ -1,44 +1,56 @@
-
 <div class="container">
-<div class="row">
-<div class="col-md-6">
-<div class="panel panel-primary">
-<div class="panel-heading">
-<h4>Ajouter Une Seance</h4>
-</div>
-<div class="panel-body">
-<!-- formulaire de saisie de commentaire -->
-<div>
-<input [(ngModel)]="seance.heureDebut">
-<button (click)="save()" class="btn bg-primary espace">
-Ajouter
-</button>
-</div>
-</div>
-</div>
-</div>
-<div class="col-md-6">
-<div class="panel panel-danger">
-<div class="panel-heading">
-<h4>Lister les seances</h4>
-</div>
-<div class="panel-body">
-<div *ngIf="seances.length>0">
-<table class="table table-striped">
-<tr>
-<td>ID</td>
-<td>HEURE DEBUT</td>
-</tr>
-<tr *ngFor="let s of seances">
-<td> {{s.id}}</td>
-<td> {{s.heureDebut}}</td>
-<td><a class="btn btn-primary" click="detailSeance(s.id)">Detail</a></td>
-<td><a class="btn btn-danger" click="deleteSeance(s.id)">Delete</a></td>
-</tr>
-</table>
-</div>
-</div>
-</div>
-</div>
-</div>
+	<div class="row">
+		<div class="col-md-6">
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<h4>Ajouter Une Seance</h4>
+				</div>
+				<div class="panel-body">
+					<!-- formulaire de saisie de commentaire -->
+					<div>
+						<div class="form-group">
+							<label for="heure">Heure</label>
+							<input id="heure" class="form-control" [(ngModel)]="hour">
+						</div>
+						<div class="form-group">
+							<label for="minutes">Minutes</label>
+							<input id="minutes" class="form-control" [(ngModel)]="minute">
+						</div>
+						<div class="form-group">
+							<label for="projection">Projection</label>
+							<select class="form-control" [(ngModel)]="projectionFilm">
+								<option *ngFor="let p of projectionFilms" [ngValue]="p"> {{p.film.titre}} - {{p.salle.name}} - {{p.dateProjection | date:'dd/MM/yyyy'}}</option>
+							</select>
+						</div>
+						<button (click)="save()" class="btn bg-primary espace">
+							Ajouter
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="panel panel-danger">
+				<div class="panel-heading">
+					<h4>Lister les seances</h4>
+				</div>
+				<div class="panel-body">
+					<div *ngIf="seances.length>0">
+						<table class="table table-striped">
+							<tr>
+								<td>#</td>
+								<td>Heure</td>
+							</tr>
+							<tr *ngFor="let s of seances">
+								<td> {{s.id}}</td>
+								<td> {{s.heureDebut | date:'hh:ss'}}</td>
+								<td><a class="btn btn-primary" click="detail(s.id)">Detail</a></td>
+								<td><a class="btn btn-danger" click="delete(s.id)">Delete</a></td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>

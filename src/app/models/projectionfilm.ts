@@ -1,5 +1,6 @@
 import { Salle } from './salle';
 import { Film } from './film';
+import { Seance } from './seance';
 
 export class ProjectionFilm {
 	id: number;
@@ -7,4 +8,5 @@ export class ProjectionFilm {
 	prix: number;
 	salle: Salle;
 	film: Film;
+	seance: Seance;
 }

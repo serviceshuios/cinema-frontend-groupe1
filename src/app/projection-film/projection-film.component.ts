@@ -5,6 +5,7 @@ import { Film } from '../models/film';
 import { SalleService } from '../salle.service';
 import { FilmService } from '../film.service';
 import { ProjectionFilmService } from '../projection-film.service';
+import { Seance } from '../models/seance';
 
 @Component({
   selector: 'app-projection-film',
@@ -13,12 +14,18 @@ import { ProjectionFilmService } from '../projection-film.service';
 })
 export class ProjectionFilmComponent implements OnInit {
 
+  // seance: Seance = {
+  //   id: 0,
+  //   heureDebut: new Date()
+  // };
+
   projectionFilm: ProjectionFilm = {
     id: 0,
     dateProjection: new Date(),
     prix: 0,
     salle: new Salle(),
-    film: new Film()
+    film: new Film(),
+    seance: null
   };
 
   films;
@@ -65,6 +72,7 @@ export class ProjectionFilmComponent implements OnInit {
         this.projectionFilm.prix = 0;
         this.projectionFilm.salle = new Salle();
         this.projectionFilm.film = new Film();
+        this.projectionFilm.seance = null;
       });
   }
 
