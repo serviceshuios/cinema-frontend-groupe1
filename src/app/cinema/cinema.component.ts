@@ -40,7 +40,6 @@ export class CinemaComponent implements OnInit {
         this.cinema.altitude = 0;
         this.cinema.nombreSalles = 0;
         this.cinema.ville = new Ville();
-        this.cinema.salles = [];
       });
   }
 

@@ -34,7 +34,6 @@ export class SalleComponent implements OnInit {
         this.salle.name = '';
         this.salle.nombrePlaces = 0;
         this.salle.cinema = new Cinema();
-        this.salle.places = [];
       });
   }
 

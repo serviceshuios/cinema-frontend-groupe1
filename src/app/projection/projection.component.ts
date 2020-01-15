@@ -33,7 +33,6 @@ export class ProjectionComponent implements OnInit {
         this.projection.id = 0;
         this.projection.date = new Date();
         this.projection.prix = 0;
-        this.projection.tickets = [];
         this.projection.seance = new Seance();
       });
   }

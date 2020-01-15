@@ -37,7 +37,6 @@ export class TicketComponent implements OnInit {
         this.ticket.prix = 0;
         this.ticket.codePayement = 0;
         this.ticket.reservee = false;
-        this.ticket.places = [];
         this.ticket.projection = new Projection();
       });
   }

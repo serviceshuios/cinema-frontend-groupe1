@@ -29,7 +29,6 @@ export class CategorieComponent implements OnInit {
         this.getAll();
         this.categorie.id = 0;
         this.categorie.name = '';
-        this.categorie.films = [];
       });
   }
 
