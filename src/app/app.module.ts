@@ -15,6 +15,8 @@ import { CategorieComponent } from './categorie/categorie.component';
 import { FilmComponent } from './film/film.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ProjectionFilmComponent } from './projection-film/projection-film.component';
+import { AcceuilComponent } from './acceuil/acceuil.component';
+import { AdministrateurComponent } from './administrateur/administrateur.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { ProjectionFilmComponent } from './projection-film/projection-film.compo
     TicketComponent,
     CategorieComponent,
     FilmComponent,
-    ProjectionFilmComponent
+    ProjectionFilmComponent,
+    AcceuilComponent,
+    AdministrateurComponent
   ],
   imports: [
     BrowserModule,
