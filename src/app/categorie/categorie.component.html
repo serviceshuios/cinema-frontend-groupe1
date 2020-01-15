@@ -1,51 +1,56 @@
 <div class="container">
-<div class="row">
-<div class="col-md-6">
-<div class="panel panel-primary">
-<div class="panel-heading">
-<h4>Ajouter Une Categorie</h4>
-</div>
-<div class="panel-body">
-<!-- formulaire de saisie de categorie -->
-<div>
+	<div class="row">
+		<div class="col-md-4">
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<h4>Ajouter Une Catégorie</h4>
+				</div>
+				<div class="panel-body">
 
-	<div class="form-group">
-								<label for="name">Nom</label>
-								<input id="name" class="form-control" [(ngModel)]="categorie.name">
-							</div>
+					<div>
 
-<!-- <input [(ngModel)]="categorie.name"> -->
-<button (click)="save()" class="btn bg-primary espace">
-Ajouter
-</button>
-</div>
-</div>
-</div>
-</div>
-<div class="col-md-6">
-<div class="panel panel-danger">
-<div class="panel-heading">
-<h4>Lister les categories</h4>
-</div>
-<div class="panel-body">
-<div *ngIf="categories.length>0">
-<table class="table table-striped">
-<tr>
-<td>ID</td>
-<td>CATEGORIE</td>
-<!-- <td>FILMS</td> -->
-</tr>
-<tr *ngFor="let cat of categories">
-<td> {{cat.id}}</td>
-<td> {{cat.name}}</td>
+						<div class="form-group">
+							<label for="nom">Nom</label>
+							<input id="nom" class="form-control" [(ngModel)]="categorie.name">
+						</div>
+						
+						<button (click)="save()" class="btn bg-primary espace">
+							Sauver
+						</button>
 
-<td><a class="btn btn-primary" (click)="detail(cat.id)">Detail</a></td>
-<td><a class="btn btn-danger" (click)="delete(cat.id)">Delete</a></td>
-</tr>
-</table>
-</div>
-</div>
-</div>
-</div>
-</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-8">
+			<div class="panel panel-danger">
+				<div class="panel-heading">
+					<h4>Lister les catégories</h4>
+				</div>
+				<div class="panel-body">
+					<div *ngIf="categories.length>0">
+						<table class="table">
+							<thead>
+								<tr>
+									<th scope="col">#</th>
+									<th scope="col">Nom</th>
+									<th scope="col">Modifier</th>
+									<th scope="col">Supprimer</th>
+								</tr>
+							</thead>
+
+							<tbody>
+								<tr *ngFor="let c of categories">
+									<th scope="col"> {{c.id}}</th>
+									<td> {{c.name}} </td>
+									<td><button class="btn btn-primary" (click)="detail(c.id)">Modifier</button></td>
+									<td><button class="btn btn-danger" (click)="delete(c.id)">Supprimer</button></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
