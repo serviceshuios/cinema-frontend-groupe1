@@ -14,6 +14,7 @@ import { TicketComponent } from './ticket/ticket.component';
 import { CategorieComponent } from './categorie/categorie.component';
 import { FilmComponent } from './film/film.component';
 import { AppRoutingModule } from './app-routing.module';
+import { ProjectionFilmComponent } from './projection-film/projection-film.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { AppRoutingModule } from './app-routing.module';
     SeanceComponent,
     TicketComponent,
     CategorieComponent,
-    FilmComponent
+    FilmComponent,
+    ProjectionFilmComponent
   ],
   imports: [
     BrowserModule,

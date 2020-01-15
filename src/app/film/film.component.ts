@@ -37,7 +37,7 @@ export class FilmComponent implements OnInit {
       .subscribe(data => {
         this.film = data;
         this.getAll();
-        this.getAllCategories();
+        //this.getAllCategories();
         this.film.id = 0;
         this.film.titre = '';
         this.film.duree = 0;

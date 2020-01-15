@@ -8,6 +8,7 @@ import { PlaceComponent } from './place/place.component';
 import { FilmComponent } from './film/film.component';
 import { SeanceComponent } from './seance/seance.component';
 import { TicketComponent } from './ticket/ticket.component';
+import { ProjectionFilmComponent } from './projection-film/projection-film.component';
 
 
 //définir les routes de mon projet
@@ -21,6 +22,7 @@ const routes: Routes = [
 {path: 'films', component: FilmComponent},
 {path: 'seances', component: SeanceComponent},
 {path: 'tickets', component: TicketComponent},
+{path: 'projectionfilms', component: ProjectionFilmComponent},
 
 //déclaration de la route par défaut
 {
