@@ -22,11 +22,6 @@ export class FilmComponent implements OnInit {
     categorie: new Categorie()
   };
 
-  categorie: Categorie = {
-    id: 0,
-    name: ''
-  };
-
   films;
   categories;
 
