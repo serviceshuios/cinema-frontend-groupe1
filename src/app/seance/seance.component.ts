@@ -13,16 +13,7 @@ import { Film } from '../models/film';
 })
 export class SeanceComponent implements OnInit {
 
-  seance: Seance = {
-    id: 0,
-    heureDebut: new Date()
-  };
-
-  seances;
-
-  hour: number;
-  minute: number;
-  projectionFilm: ProjectionFilm = {
+ projectionFilm: ProjectionFilm = {
     id: 0,
     dateProjection: new Date(),
     prix: 0,
@@ -30,6 +21,16 @@ export class SeanceComponent implements OnInit {
     film: new Film(),
     seance: new Seance()
   };
+
+  seance: Seance = {
+    id: 0,
+    heureDebut: new Date()
+  };
+
+  seances;
+
+  hour: string;
+  minute: number;
 
   projectionFilms;
 
@@ -41,29 +42,27 @@ export class SeanceComponent implements OnInit {
   }
 
   save() {
-    this.seance.heureDebut = this.projectionFilm.dateProjection;
-    this.seance.heureDebut.setHours(this.hour, this.minute);
+    this.seance.heureDebut = new Date('01 Jan 1970 '+this.hour+' GMT');
+    // this.seanceService.add(this.seance)
+    //   .subscribe(data => {
+    //     this.seance = data;
+    //     this.getAll();
+    //     this.seance.id = 0;
+    //     this.seance.heureDebut = new Date();
+    //   });
 
-    this.seanceService.add(this.seance)
-      .subscribe(data => {
-        this.seance = data;
+    this.projectionFilm.seance = this.seance;
+    this.projectionFilmService.add(this.projectionFilm)
+      .subscribe(data2 => {
+        this.projectionFilm = data2;
+        this.projectionFilm.id = 0;
+        this.projectionFilm.dateProjection = new Date();
+        this.projectionFilm.prix = 0;
+        this.projectionFilm.salle = new Salle();
+        this.projectionFilm.film = new Film();
+        this.projectionFilm.seance = new Seance();
         this.getAll();
-        this.seance.id = 0;
-        this.seance.heureDebut = new Date();
-        this.projectionFilm.seance = this.seance;
-        this.projectionFilmService.add(this.projectionFilm)
-          .subscribe(data2 => {
-            this.projectionFilm = data2;
-            this.projectionFilm.id = 0;
-            this.projectionFilm.dateProjection = new Date();
-            this.projectionFilm.prix = 0;
-            this.projectionFilm.salle = new Salle();
-            this.projectionFilm.film = new Film();
-            this.projectionFilm.seance = new Seance();
-          });
       });
-
-
 
 
   }
