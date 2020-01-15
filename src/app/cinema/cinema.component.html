@@ -8,7 +8,35 @@
 				<div class="panel-body">
 					<!-- formulaire de saisie de cinema -->
 					<div>
-						<input [(ngModel)]="cinema.name">
+
+						<div class="form-group">
+							<label for="titre">Nom</label>
+							<input id="titre" class="form-control" [(ngModel)]="cinema.name">
+						</div>
+						<div class="form-group">
+							<label for="titre">Longitude</label>
+							<input id="titre" class="form-control" [(ngModel)]="cinema.longitude">
+						</div>
+						<div class="form-group">
+							<label for="duree">Latitude</label>
+							<input id="duree" class="form-control" [(ngModel)]="cinema.latitude">
+						</div>
+						<div class="form-group">
+							<label for="realisation">Altitude</label>
+							<input id="realisation" class="form-control" [(ngModel)]="cinema.altitude">
+						</div>
+						<div class="form-group">
+							<label for="description">NombreSalles</label>
+							<input id="description" class="form-control" [(ngModel)]="cinema.nombreSalles">
+						</div>
+
+						<div class="form-group">
+							<label for="categorie">Ville</label>
+							<select class="form-control" [(ngModel)]="cinema.ville">
+								<option *ngFor="let ci of cinemas" [ngValue]="ci">{{ci.name}}</option>
+							</select>
+						</div>
+						<!-- <input [(ngModel)]="cinema.name"> -->
 						<button (click)="save()" class="btn bg-primary espace">
 							Ajouter
 						</button>

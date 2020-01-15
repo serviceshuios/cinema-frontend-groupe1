@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CinemaService } from '../cinema.service';
 import { Cinema } from '../models/cinema';
 import { Ville } from '../models/ville';
+import { VilleService } from '../ville.service';
 
 @Component({
   selector: 'app-cinema',
@@ -21,11 +22,13 @@ export class CinemaComponent implements OnInit {
   };
 
   cinemas;
+  villes;
 
-  constructor(private cinemaService: CinemaService) { }
+  constructor(private cinemaService: CinemaService, private villeService: VilleService) { }
 
   ngOnInit() {
     this.getAll();
+    this.getAllVilles()
   }
 
   save() {
@@ -33,6 +36,7 @@ export class CinemaComponent implements OnInit {
       .subscribe(data => {
         this.cinema = data;
         this.getAll();
+        this.getAllVilles();
         this.cinema.id = 0;
         this.cinema.name = '';
         this.cinema.latitude = 0;
@@ -47,6 +51,13 @@ export class CinemaComponent implements OnInit {
     this.cinemaService.getAll()
       .subscribe(data => {
         this.cinemas = data
+      })
+  }
+
+  getAllVilles() {
+    this.villeService.getAll()
+      .subscribe(data => {
+        this.villes = data
       })
   }
 
