@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { SalleService } from '../salle.service';
 import { Salle } from '../models/salle';
 import { Cinema } from '../models/cinema';
+import { CinemaService } from '../cinema.service';
 
 @Component({
   selector: 'app-salle',
@@ -18,11 +19,13 @@ export class SalleComponent implements OnInit {
   };
 
   salles;
+  cinemas;
 
-  constructor(private salleService: SalleService) { }
+  constructor(private salleService: SalleService, private cinemaService: CinemaService) { }
 
   ngOnInit() {
     this.getAll();
+    this.getAllCinemas();
   }
 
   save() {
@@ -41,6 +44,13 @@ export class SalleComponent implements OnInit {
     this.salleService.getAll()
       .subscribe(data => {
         this.salles = data
+      })
+  }
+
+  getAllCinemas() {
+    this.cinemaService.getAll()
+      .subscribe(data => {
+        this.cinemas = data
       })
   }
 
