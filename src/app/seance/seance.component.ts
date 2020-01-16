@@ -5,6 +5,7 @@ import { ProjectionFilm } from '../models/projectionfilm';
 import { ProjectionFilmService } from '../projection-film.service';
 import { Salle } from '../models/salle';
 import { Film } from '../models/film';
+import { stringify } from 'querystring';
 
 @Component({
   selector: 'app-seance',
@@ -13,7 +14,7 @@ import { Film } from '../models/film';
 })
 export class SeanceComponent implements OnInit {
 
- projectionFilm: ProjectionFilm = {
+  projectionFilm: ProjectionFilm = {
     id: 0,
     dateProjection: new Date(),
     prix: 0,
@@ -30,6 +31,7 @@ export class SeanceComponent implements OnInit {
   seances;
 
   hour: string;
+  heure: string;
   minute: number;
 
   projectionFilms;
@@ -42,15 +44,7 @@ export class SeanceComponent implements OnInit {
   }
 
   save() {
-    this.seance.heureDebut = new Date('01 Jan 1970 '+this.hour+' GMT');
-    // this.seanceService.add(this.seance)
-    //   .subscribe(data => {
-    //     this.seance = data;
-    //     this.getAll();
-    //     this.seance.id = 0;
-    //     this.seance.heureDebut = new Date();
-    //   });
-
+    this.seance.heureDebut = new Date('01 Jan 1970 ' + this.hour + ' GMT+1');
     this.projectionFilm.seance = this.seance;
     this.projectionFilmService.add(this.projectionFilm)
       .subscribe(data2 => {
