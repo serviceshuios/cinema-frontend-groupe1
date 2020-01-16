@@ -17,6 +17,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { ProjectionFilmComponent } from './projection-film/projection-film.component';
 import { AcceuilComponent } from './acceuil/acceuil.component';
 import { AdministrateurComponent } from './administrateur/administrateur.component';
+import { ClientComponent } from './client/client.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { AdministrateurComponent } from './administrateur/administrateur.compone
     FilmComponent,
     ProjectionFilmComponent,
     AcceuilComponent,
-    AdministrateurComponent
+    AdministrateurComponent,
+    ClientComponent
   ],
   imports: [
     BrowserModule,
