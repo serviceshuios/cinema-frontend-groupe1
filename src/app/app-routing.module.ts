@@ -10,6 +10,7 @@ import { SeanceComponent } from './seance/seance.component';
 import { TicketComponent } from './ticket/ticket.component';
 import { ProjectionFilmComponent } from './projection-film/projection-film.component';
 import { ClientComponent } from './client/client.component';
+import { AdministrateurComponent } from './administrateur/administrateur.component';
 
 
 //définir les routes de mon projet
@@ -25,11 +26,12 @@ const routes: Routes = [
 {path: 'tickets', component: TicketComponent},
 {path: 'projectionfilms', component: ProjectionFilmComponent},
 {path: 'client', component: ClientComponent},
+{path: 'admin', component: AdministrateurComponent},
 
 //déclaration de la route par défaut
 {
   path: '',
-  redirectTo: '/villes',
+  redirectTo: '/',
   pathMatch: 'full'
 }
 ];
