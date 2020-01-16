@@ -15,9 +15,10 @@ import { CategorieComponent } from './categorie/categorie.component';
 import { FilmComponent } from './film/film.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ProjectionFilmComponent } from './projection-film/projection-film.component';
-import { AcceuilComponent } from './acceuil/acceuil.component';
+
 import { AdministrateurComponent } from './administrateur/administrateur.component';
 import { ClientComponent } from './client/client.component';
+import { VisiteurComponent } from './visiteur/visiteur.component';
 
 @NgModule({
   declarations: [
@@ -31,9 +32,9 @@ import { ClientComponent } from './client/client.component';
     CategorieComponent,
     FilmComponent,
     ProjectionFilmComponent,
-    AcceuilComponent,
     AdministrateurComponent,
-    ClientComponent
+    ClientComponent,
+    VisiteurComponent
   ],
   imports: [
     BrowserModule,
