@@ -37,12 +37,19 @@
 								[(ngModel)]="film.photo">
 							<small id="photoHelp" class="form-text text-muted">Entrez l'URL de l'affiche</small>
 						</div>
-						<div class="form-group">
+						<!-- <div class="form-group">
 							<label for="date">Date de sortie</label>
 							<input id="date" class="form-control" aria-describedby="dateHelp"
 								[(ngModel)]="film.dateSortie">
 							<small id="dateHelp" class="form-text text-muted">Format : YYYY-MM-DD</small>
-						</div>
+						</div> -->
+
+						<div class="form-group">
+						<label for="dateProjection">Date de sortie</label>
+						<input type="date" id="dateProjection" class="form-control"
+						 [(ngModel)]="film.dateSortie">
+					</div>
+
 						<div class="form-group">
 							<label for="categorie">Catégorie</label>
 							<select class="form-control" [(ngModel)]="film.categorie">
