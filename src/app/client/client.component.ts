@@ -3,6 +3,8 @@ import { VilleService } from '../ville.service';
 import { CinemaService } from '../cinema.service';
 import { Ville } from '../models/ville';
 import { Cinema } from '../models/cinema';
+import { SalleService } from '../salle.service';
+import { Salle } from '../models/salle';
 
 @Component({
   selector: 'app-client',
@@ -11,11 +13,12 @@ import { Cinema } from '../models/cinema';
 })
 export class ClientComponent implements OnInit {
 
-  constructor(private villeService: VilleService, private cinemaService: CinemaService) { }
+  constructor(private villeService: VilleService, private cinemaService: CinemaService, private salleService: SalleService) { }
 
   villes;
   cinemas;
   salles;
+  projectionFilms;
 
   ngOnInit() {
     this.getAllVilles();
@@ -29,10 +32,18 @@ export class ClientComponent implements OnInit {
   }
 
   getSalles(c: Cinema) {
-     this.cinemaService.getSalles(c.id)
+    this.cinemaService.getSalles(c.id)
       .subscribe(data => {
         this.salles = data
       })
+  }
+
+  getProjectionFilms(s: Salle): any {
+    this.salleService.getProjectionFilms(s.id)
+      .subscribe(data => {
+        this.projectionFilms = data
+      })
+    return this.projectionFilms;
   }
 
   getAllVilles() {

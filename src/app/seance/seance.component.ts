@@ -84,8 +84,12 @@ export class SeanceComponent implements OnInit {
   }
 
   delete(idSeance: number) {
-    this.seanceService.delete(idSeance)
+    this.projectionFilm.id = 0;
+    this.projectionFilmService.add(this.projectionFilm)
       .subscribe(data => this.ngOnInit()
+      )
+    this.seanceService.delete(idSeance)
+      .subscribe(data2 => this.ngOnInit()
       )
   }
 }

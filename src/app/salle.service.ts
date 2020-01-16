@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Salle } from './models/salle';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { ProjectionFilm } from './models/projectionfilm';
 
 @Injectable({
   providedIn: 'root'
@@ -18,6 +19,10 @@ export class SalleService {
 
   public get(id: number): Observable<Salle> {
     return this.http.get<Salle>(this.host + '/salles/' + id);
+  }
+
+  public getProjectionFilms(id: number): Observable<ProjectionFilm> {
+    return this.http.get<ProjectionFilm>(this.host + '/salles/' + id + '/projectionfilms');
   }
 
   public add(salle: Salle): Observable<Salle> {

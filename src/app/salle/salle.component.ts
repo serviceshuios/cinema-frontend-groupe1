@@ -15,7 +15,8 @@ export class SalleComponent implements OnInit {
     id: 0,
     name: '',
     nombrePlaces: 0,
-    cinema: new Cinema()
+    cinema: new Cinema(),
+    projectionFilms: []
   };
 
   salles;
@@ -37,6 +38,7 @@ export class SalleComponent implements OnInit {
         this.salle.name = '';
         this.salle.nombrePlaces = 0;
         this.salle.cinema = new Cinema();
+        this.salle.projectionFilms = [];
       });
   }
 

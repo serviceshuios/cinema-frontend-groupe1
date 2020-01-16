@@ -48,7 +48,7 @@
 									<th scope="col">Prix</th>
 									<th scope="col">Salle</th>
 									<th scope="col">Film</th>
-									<!-- <th scope="col">Seance</th> -->
+									<th scope="col">Seance</th>
 									<th scope="col">Modifier</th>
 									<th scope="col">Supprimer</th>
 								</tr>
@@ -61,7 +61,7 @@
 									<td> {{pf.prix}} </td>
 									<td> {{pf.salle.name}} </td>
 									<td> {{pf.film.titre}} </td>
-									<!-- <td> {{pf.seance.heureDebut | date:'hh:ss'}} </td> -->
+									<td> {{pf.seance.heureDebut | date:'hh:ss'}} </td>
 									<td><button class="btn btn-primary" (click)="detail(pf.id)">Modifier</button></td>
 									<td><button class="btn btn-danger" (click)="delete(pf.id)">Supprimer</button></td>
 								</tr>
