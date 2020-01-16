@@ -96,7 +96,7 @@
 									<td> {{f.description}} </td>
 									<td> {{f.photo}} </td>
 									<td> {{f.dateSortie | date:'dd/MM/yyyy'}} </td>
-									<td> {{f.categorie.name}} </td>
+									<td> {{f.categorie}} </td>
 									<td><button class="btn btn-primary" (click)="detail(f.id)">Modifier</button></td>
 									<td><button class="btn btn-danger" (click)="delete(f.id)">Supprimer</button></td>
 								</tr>
