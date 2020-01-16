@@ -7,6 +7,5 @@ export class Place {
 	public latitude: number;
 	public longitude: number;
 	public altitude: number;
-	public ticket: Ticket;
 	public salle: Salle
 }

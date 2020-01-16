@@ -19,19 +19,17 @@ export class PlaceComponent implements OnInit {
     latitude: 0,
     longitude: 0,
     altitude: 0,
-    ticket: new Ticket(),
+
     salle: new Salle()
   };
 
   places;
-  tickets;
   salles;
 
-  constructor(private placeService: PlaceService, private ticketService: TicketService, private salleService: SalleService) { }
+  constructor(private placeService: PlaceService, private salleService: SalleService) { }
 
   ngOnInit() {
     this.getAll();
-    this.getAllTickets();
     this.getAllSalles()
   }
 
@@ -40,14 +38,12 @@ export class PlaceComponent implements OnInit {
       .subscribe(data => {
         this.place = data;
         this.getAll();
-        this.getAllTickets();
         this.getAllSalles();
         this.place.id = 0;
         this.place.numero = 0;
         this.place.latitude = 0;
         this.place.longitude = 0;
         this.place.altitude = 0;
-        this.place.ticket = new Ticket();
         this.place.salle = new Salle();
       });
   }
@@ -59,12 +55,6 @@ export class PlaceComponent implements OnInit {
       })
   }
 
-  getAllTickets() {
-    this.ticketService.getAll()
-      .subscribe(data => {
-        this.tickets = data
-      })
-  }
 
   getAllSalles() {
     this.salleService.getAll()

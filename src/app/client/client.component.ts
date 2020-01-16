@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { VilleService } from '../ville.service';
-import { Ville } from '../models/ville';
+import { CinemaService } from '../cinema.service';
 
 @Component({
   selector: 'app-client',
@@ -12,6 +12,8 @@ export class ClientComponent implements OnInit {
   constructor(private villeService: VilleService) { }
 
   villes;
+
+  ville;
 
   ngOnInit() {
     this.getAllVilles();

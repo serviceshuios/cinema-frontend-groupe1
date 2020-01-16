@@ -1,6 +1,6 @@
 <div class="container">
 	<div class="row">
-		<div class="col-md-2">
+		<div class="col-md-3">
 			<div class="panel panel-primary">
 				<div class="panel-heading">
 					<h4>Ajouter Un Film</h4>
@@ -64,7 +64,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-md-10">
+		<div class="col-md-9">
 			<div class="panel panel-danger">
 				<div class="panel-heading">
 					<h4>Lister les films</h4>
@@ -96,7 +96,7 @@
 									<td> {{f.description}} </td>
 									<td> {{f.photo}} </td>
 									<td> {{f.dateSortie | date:'dd/MM/yyyy'}} </td>
-									<td> {{f.categorie}} </td>
+									<td> {{f.categorie.name}} </td>
 									<td><button class="btn btn-primary" (click)="detail(f.id)">Modifier</button></td>
 									<td><button class="btn btn-danger" (click)="delete(f.id)">Supprimer</button></td>
 								</tr>
