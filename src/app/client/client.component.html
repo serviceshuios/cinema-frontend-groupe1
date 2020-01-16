@@ -1,29 +1,33 @@
 <div class="row">
 	<div class="list-group col-md-2">
 		<ul>
-			<li *ngFor="let v of villes" routerLink="/client/cities?city={{v.id}}"
-				class="list-group-item list-group-item-action">
-				{{v.name}}</li>
+			<li *ngFor="let v of villes" class="list-group-item list-group-item-action">
+				<a (click)="getCinemas(v)">{{v.name}}</a>
+			</li>
 		</ul>
 	</div>
 	<div class="container col-md-10">
-		jzdcgvezhfvhezjfvcherzcvhjerzvhv shvbhbvezhcbsdkjcvezhjvcezhjcv ez,v eshjcvevjc zq,hv ehj hav ehjv eqzkhvc qehc
-		ezc ,e vcehjzac ezc hqshjzeqh,c kezqjcqjz
-		jzdcgvezhfvhezjfvcherzcvhjerzvhv shvbhbvezhcbsdkjcvezhjvcezhjcv ez,v eshjcvevjc zq,hv ehj hav ehjv eqzkhvc qehc
-		ezc ,e vcehjzac ezc hqshjzeqh,c kezqjcqjz
-		jzdcgvezhfvhezjfvcherzcvhjerzvhv shvbhbvezhcbsdkjcvezhjvcezhjcv ez,v eshjcvevjc zq,hv ehj hav ehjv eqzkhvc qehc
-		ezc ,e vcehjzac ezc hqshjzeqh,c kezqjcqjz
-		jzdcgvezhfvhezjfvcherzcvhjerzvhv shvbhbvezhcbsdkjcvezhjvcezhjcv ez,v eshjcvevjc zq,hv ehj hav ehjv eqzkhvc qehc
-		ezc ,e vcehjzac ezc hqshjzeqh,c kezqjcqjz
-		jzdcgvezhfvhezjfvcherzcvhjerzvhv shvbhbvezhcbsdkjcvezhjvcezhjcv ez,v eshjcvevjc zq,hv ehj hav ehjv eqzkhvc qehc
-		ezc ,e vcehjzac ezc hqshjzeqh,c kezqjcqjz
-		jzdcgvezhfvhezjfvcherzcvhjerzvhv shvbhbvezhcbsdkjcvezhjvcezhjcv ez,v eshjcvevjc zq,hv ehj hav ehjv eqzkhvc qehc
-		ezc ,e vcehjzac ezc hqshjzeqh,c kezqjcqjz
-		jzdcgvezhfvhezjfvcherzcvhjerzvhv shvbhbvezhcbsdkjcvezhjvcezhjcv ez,v eshjcvevjc zq,hv ehj hav ehjv eqzkhvc qehc
-		ezc ,e vcehjzac ezc hqshjzeqh,c kezqjcqjz
-		jzdcgvezhfvhezjfvcherzcvhjerzvhv shvbhbvezhcbsdkjcvezhjvcezhjcv ez,v eshjcvevjc zq,hv ehj hav ehjv eqzkhvc qehc
-		ezc ,e vcehjzac ezc hqshjzeqh,c kezqjcqjz
-		jzdcgvezhfvhezjfvcherzcvhjerzvhv shvbhbvezhcbsdkjcvezhjvcezhjcv ez,v eshjcvevjc zq,hv ehj hav ehjv eqzkhvc qehc
-		ezc ,e vcehjzac ezc hqshjzeqh,c kezqjcqjz
+		<div class="row">
+			<button *ngFor="let c of cinemas" (click)="getSalles(c)" routerLink="/villes/cinemas/{{c.id}}"
+				class="btn btn-primary">
+				{{c.name}}
+			</button>
+		</div>
+
+		<br>
+
+		<div class="row">
+			<div *ngFor="let s of salles" class="col-md-5">
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h4>{{s.name}}</h4>
+					</div>
+					<div class="panel-body">
+						Infos
+					</div>
+				</div>
+			</div>
+
+		</div>
 	</div>
 </div>

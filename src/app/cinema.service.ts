@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Cinema } from './models/cinema';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { Salle } from './models/salle';
 
 @Injectable({
   providedIn: 'root'
@@ -18,6 +19,10 @@ export class CinemaService {
 
   public get(id: number): Observable<Cinema> {
     return this.http.get<Cinema>(this.host + '/cinemas/' + id);
+  }
+
+  public getSalles(id: number): Observable<Salle> {
+    return this.http.get<Salle>(this.host + '/cinemas/' + id + '/salles');
   }
 
   public add(filiere: Cinema): Observable<Cinema> {
