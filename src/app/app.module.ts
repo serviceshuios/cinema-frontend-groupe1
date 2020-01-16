@@ -34,7 +34,8 @@ import { VisiteurComponent } from './visiteur/visiteur.component';
     ProjectionFilmComponent,
     AdministrateurComponent,
     ClientComponent,
-    VisiteurComponent
+    VisiteurComponent,
+
   ],
   imports: [
     BrowserModule,
