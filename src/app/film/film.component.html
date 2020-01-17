@@ -13,11 +13,6 @@
 							<label for="titre">Titre</label>
 							<input id="titre" class="form-control" [(ngModel)]="film.titre">
 						</div>
-						<!-- <div>
-						<img src="{{C:\Users\IN-MP-031\Desktop\photos projet final\bob.jpg}}" alt="image"/>
-							</div> -->
-
-							
 
 						<div class="form-group">
 							<label for="duree">Durée</label>
@@ -94,7 +89,7 @@
 									<td> {{f.duree}} </td>
 									<td> {{f.realisation}} </td>
 									<td> {{f.description}} </td>
-									<td> {{f.photo}} </td>
+									<td> <img height="75 px" width="50 px" src="{{f.photo}}"> </td>
 									<td> {{f.dateSortie | date:'dd/MM/yyyy'}} </td>
 									<td> {{f.categorie.name}} </td>
 									<td><button class="btn btn-primary" (click)="detail(f.id)">Modifier</button></td>

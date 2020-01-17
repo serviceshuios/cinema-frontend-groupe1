@@ -1,3 +1,4 @@
+import { Place } from './place';
 
 
 export class Ticket {
@@ -6,4 +7,5 @@ export class Ticket {
 	public prix: number;
 	public codePayement: number;
 	public reservee: boolean;
+	public place: Place;
 }

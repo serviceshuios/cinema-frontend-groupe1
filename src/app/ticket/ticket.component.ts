@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TicketService } from '../ticket.service';
 import { Ticket } from '../models/ticket';
+import { Place } from '../models/place';
 
 @Component({
   selector: 'app-ticket',
@@ -14,7 +15,8 @@ export class TicketComponent implements OnInit {
     nomClient: '',
     prix: 0,
     codePayement: 0,
-    reservee: false
+    reservee: false,
+    place: new Place()
   };
 
   tickets;
@@ -35,6 +37,7 @@ export class TicketComponent implements OnInit {
         this.ticket.prix = 0;
         this.ticket.codePayement = 0;
         this.ticket.reservee = false;
+        this.ticket.place = new Place();
       });
   }
 

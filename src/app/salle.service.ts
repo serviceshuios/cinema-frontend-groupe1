@@ -3,6 +3,7 @@ import { Salle } from './models/salle';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { ProjectionFilm } from './models/projectionfilm';
+import { Place } from './models/place';
 
 @Injectable({
   providedIn: 'root'
@@ -21,8 +22,12 @@ export class SalleService {
     return this.http.get<Salle>(this.host + '/salles/' + id);
   }
 
-  public getProjectionFilms(id: number): Observable<ProjectionFilm> {
-    return this.http.get<ProjectionFilm>(this.host + '/salles/' + id + '/projectionfilms');
+  public getProjectionFilms(id: number): Observable<Array<ProjectionFilm>> {
+    return this.http.get<Array<ProjectionFilm>>(this.host + '/salles/' + id + '/projectionfilms');
+  }
+
+  public getPlaces(id: number): Observable<Array<Place>> {
+    return this.http.get<Array<Place>>(this.host + '/salles/' + id + '/places');
   }
 
   public add(salle: Salle): Observable<Salle> {
