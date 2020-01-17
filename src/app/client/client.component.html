@@ -23,19 +23,18 @@
 					</div>
 					<div class="panel-body">
 						<div *ngFor="let pf of s.projectionFilms">
-							<div class="col-md-4 thumbnail">
-								{{pf.film.titre}} ({{pf.film.categorie.name}})
-								<br>
+							<div class="col-md-6 thumbnail">
+								{{pf.film.titre}} - {{pf.film.realisation}} ({{pf.film.categorie.name}})
 								<img class="thumbnail" src="{{pf.film.photo}}" />
 								{{pf.film.description}}
 							</div>
-							<div class="col-md-8">
+							<div class="col-md-6">
 								<ul>
 									<li class="list-group-item list-group-item-action">
-										<a (click)="getPlaces(pf)">{{pf.seance.heureDebut | date:'hh:mm'}}</a>
+										<a (click)="getPlaces(pf)">{{pf.dateProjection | date:'dd/MM'}} - {{pf.seance.heureDebut | date:'hh:mm'}}</a>
 									</li>
 								</ul>
-								<div>
+								<div *ngIf="currentSalleId===pf.id">
 									<button class="btn btn-primary"  *ngFor="let p of places">{{p.numero}}</button>
 								</div>
 							</div>

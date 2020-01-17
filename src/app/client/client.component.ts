@@ -27,6 +27,7 @@ export class ClientComponent implements OnInit {
   places;
   tickets = [];
   projectionFilms;
+  currentSalleId: number;
 
   ticket: Ticket = {
     id: 0,
@@ -67,6 +68,7 @@ export class ClientComponent implements OnInit {
       .subscribe(data => {
         this.places = data
       })
+    this.currentSalleId = pf.salle.id;
   }
 
   getSalles(c: Cinema) {
